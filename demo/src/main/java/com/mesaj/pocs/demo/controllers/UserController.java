@@ -24,6 +24,7 @@ public class UserController {
         ThirdPartyUser thirdPartyUser = thirdPartyService
                 .getThirdPartyUser(user.getId());
 
+
         ValidateUser validateUser = new ValidateUser(thirdPartyUser);
 
         if(validateUser.isAlive() && validateUser.isAnAdult()){

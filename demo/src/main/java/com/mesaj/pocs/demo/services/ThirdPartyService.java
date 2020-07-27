@@ -14,9 +14,16 @@ public class ThirdPartyService {
     RestTemplate restTemplate;
 
     public ThirdPartyUser getThirdPartyUser(Long id) {
-        ResponseEntity<ThirdPartyUser> resp =
-                restTemplate.getForEntity("http://localhost:8080/users/" + id,
-                        ThirdPartyUser.class);
+        ResponseEntity<ThirdPartyUser> resp = null;
+
+        try {
+
+                    restTemplate.getForEntity("http://localhost:8080/users/" + id,
+                            ThirdPartyUser.class);
+        } catch (Exception ex) {
+
+            throw new UserNotFoundException(id);
+        }
 
         return resp.getStatusCode() == HttpStatus.OK ? resp.getBody() : null;
     }
