@@ -1,5 +1,6 @@
-package com.mesaj.pocs.demo.services;
+package com.mesaj.pocs.demo.exceptions;
 
+import com.mesaj.pocs.demo.exceptions.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

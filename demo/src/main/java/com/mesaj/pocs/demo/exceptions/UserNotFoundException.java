@@ -1,4 +1,4 @@
-package com.mesaj.pocs.demo.services;
+package com.mesaj.pocs.demo.exceptions;
 
 public class UserNotFoundException extends RuntimeException {
 
